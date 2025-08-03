@@ -1,6 +1,3 @@
-# Alogrithms
-# Alogrithms
-# Alogrithms
-# Alogrithms
-# Alogrithms
-# Alogrithms
+# your_project
+
+Project description.
