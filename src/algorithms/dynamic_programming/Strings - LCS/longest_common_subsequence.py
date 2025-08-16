@@ -6,7 +6,6 @@ b  0 1  1  1
 c  0 1  2  2
 d  0 1  2  2
 e  0 1  2  3
-
 """
 
 class Solution(object):
