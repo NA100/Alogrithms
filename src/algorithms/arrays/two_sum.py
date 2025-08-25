@@ -7,8 +7,6 @@ and you may not use the same element twice.
 
 You can return the answer in any order.
 
-
-
 Example 1:
 
 Input: nums = [2,7,11,15], target = 9
@@ -23,3 +21,20 @@ Example 3:
 Input: nums = [3,3], target = 6
 Output: [0,1]
 """
+
+def two_sum(nums, target):
+    dict = {}
+    for i in range(0, len(nums)):
+        difference = target - nums[i]
+        print(dict)
+        if nums[i] in dict:
+            index = dict[nums[i]]
+            return [index, i]
+        dict[difference] = i
+    print(dict)
+    return [-1, -1]
+
+if __name__ == "__main__":
+    nums = [2, 9 , 7, 1, 10]
+    target = 9
+    print(two_sum(nums, target))

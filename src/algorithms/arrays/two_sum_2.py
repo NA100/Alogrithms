@@ -12,3 +12,30 @@ You may not use the same element twice.
 
 Your solution must use only constant extra space.
 """
+
+
+def two_sum(numbers, target):
+    """
+    :type numbers: List[int]
+    :type target: int
+    :rtype: List[int]
+    """
+    i = 0
+    j = len(numbers) - 1
+
+    while i < j:
+        if numbers[i] + numbers[j] == target:
+            return [i+1,j+1]
+
+        if numbers[i] + numbers[j] > target:
+            j = j - 1
+        else:
+            i = i + 1
+
+    return [-1, -1]
+
+
+if __name__ == "__main__":
+    nums = [2, 9 , 7, 1, 10]
+    target = 9
+    print(two_sum(nums, target))
