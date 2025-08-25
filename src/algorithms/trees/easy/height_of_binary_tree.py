@@ -21,7 +21,7 @@ def maxDepth_recursive(node):
     if not node:
         return 0
     else:
-        return 1 + max(maxDepth(node.left), maxDepth(node.right))
+        return 1 + max(maxDepth_recursive(node.left), maxDepth_recursive(node.right))
 
 def maxDepth_iterative(node):
     q = deque([node])
@@ -33,8 +33,6 @@ def maxDepth_iterative(node):
             if node.left: q.append(node.left)
             if node.right: q.append(node.right)
     return depth
-
-
 
 def main():
      root = TreeNode(3,

@@ -31,7 +31,10 @@ print("Set:", s, 1 in s)
 # ==== 4. Dictionaries ====
 d = {'a': 1, 'b': 2}
 d['c'] = 3
+
 value = d.get('d', 0)
+
+
 for key, val in d.items():
     print(f"Dict Key: {key}, Value: {val}")
 print("Get with default:", value)
@@ -150,3 +153,32 @@ def minCostClimbingStairs(cost):
     return min(a, b)
 
 print("Min Cost Climbing Stairs:", minCostClimbingStairs([10, 15, 20]))
+
+
+#Mutating outer variables
+def counter():
+    n = 0
+    def inc():
+        nonlocal n     # rebind outer n
+        n += 1
+        return n
+    return inc
+
+c = counter()
+print(c())  # 1
+print(c())  # 2
+
+
+#wrapper calls
+def log_calls(fn):
+    def wrapper(*args, **kwargs):
+        print(f"→ {fn.__name__}({args}, {kwargs})")
+        result = fn(*args, **kwargs)
+        print(f"← {result}")
+        return result
+    return wrapper
+
+@log_calls
+def add(a, b): return a + b
+add(2, 3)
+

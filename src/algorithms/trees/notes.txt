@@ -1,0 +1,27 @@
+Properties of a tree:
+* If tree has 'n' nodes, then it has 'n-1' edges
+* Connected acyclic graph
+* There is only one path from each node to any other node in tree
+* Every node has only one parent (except root node)
+* Internal node vs Leaf node
+
+Binary Search Tree:
+* Left node has lesser value, then root node, then right node.
+* In-order traversals visits keys in sorted order
+* Search / Insert / Delete - O(n) if skewed, O(logn) if balanced
+
+AVL: tightly balanced, fastest lookups, rotation on updates
+Red-Black (RB): loosely-balanced.  fewer rotations on inserts/deletes
+
+Variants of trees:
+* k-ary / n-ary tree: any node has ≤ k children (binary: k=2).
+* Binary tree types
+    Full (proper): each node has 0 or 2 children → leaves L = internal nodes + 1.
+    Complete: filled level by level, last level left-packed (great for array storage).
+    Perfect: all levels full → nodes = 2 power h+1 - 1
+    Balanced (height-balanced): height is O(log n) (e.g., AVL, Red-Black).
+* Binary Search Tree (BST): left < node < right; in-order traversal yields sorted keys.
+* Heaps (min/max): parent order ≥/≤ children; supports O(1) find-min/max.
+* Tries (prefix trees): edges by characters of keys; lookups in O(L) by key length.
+* B-trees / B+ trees: multi-way, disk-friendly (databases/filesystems).
+* Self-balancing BSTs: AVL, Red-Black, Treap, Splay, etc.

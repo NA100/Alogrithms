@@ -4,9 +4,11 @@ Given an integer array nums, return the length of the longest strictly increasin
 subsequence.
 A subsequence is a sequence that can be derived from another array by deleting some
 elements (without changing the order of the remaining).
+
 Example
-Input: nums = [10, 9, 2, 5, 3, 7, 101, 18]
-Output: 4
+    Input: nums = [10, 9, 2, 5, 3, 7, 101, 18]
+    Output: 4
+
 Why: LIS is [2, 3, 7, 101]. Length = 4.
 """
 
