@@ -21,12 +21,13 @@ Input: nums = [], target = 0
 Output: [-1,-1]
 """
 
+# O(logn)
 def find_position_optimized(nums, target, leftBias):
 
-    def binary_search_optimized(i, j, target, leftBias ):
+    def binary_search_optimized(i, j, target, leftBias):
         k = -1
         while i <= j:
-            mid = (j + i)//2
+            mid = (j + i) // 2
             if nums[mid] < target:
                 i = mid + 1
             elif nums[mid] > target:
@@ -36,13 +37,13 @@ def find_position_optimized(nums, target, leftBias):
                 if leftBias:
                     j = mid -1
                 else:
-                    i = mid+1
+                    i = mid + 1
         return k
 
     return binary_search_optimized(0, len(nums) -1, target, leftBias)
 
 
-
+# O(n)
 def find_position_not_optimized(nums, target):
 
     def binary_search(i, j, target):
