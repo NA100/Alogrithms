@@ -25,7 +25,7 @@ def two_sum(numbers, target):
 
     while i < j:
         if numbers[i] + numbers[j] == target:
-            return [i+1,j+1]
+            return [i+1, j+1]
 
         if numbers[i] + numbers[j] > target:
             j = j - 1

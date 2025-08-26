@@ -12,3 +12,23 @@ Given the sorted rotated array nums of unique elements, return the minimum eleme
 You must write an algorithm that runs in O(log n) time.
 
 """
+
+def find_min(arr):
+    l = 0
+    h = len(arr) - 1
+    m = -1
+
+    while l <= h:
+        m = (l + h) // 2
+        if arr[l] < arr[h]:
+            m = l
+            break
+        if arr[l] > arr[m]:
+            h = m - 1
+        else:
+            l = m + 1
+    return arr[m]
+
+if __name__ == "__main__":
+    arr = [11,1,2,3,4,5,6,7,8]
+    print(find_min(arr))
