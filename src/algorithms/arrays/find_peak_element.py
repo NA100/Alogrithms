@@ -9,3 +9,18 @@ You may imagine that nums[-1] = nums[n] = -∞. In other words, an element is al
 
 You must write an algorithm that runs in O(log n) time.
 """
+
+def find_peak_element(nums):
+    l, r = 0, len(nums) - 1
+    while l < r:
+        mid = (l + r) // 2
+        if nums[mid] < nums[mid + 1]:
+            l = mid + 1
+        else:
+            r = mid
+    return nums[l]  # or r; l == r
+
+
+if __name__ == "__main__":
+    nums = [1,3,5,2]
+    print(find_peak_element(nums))

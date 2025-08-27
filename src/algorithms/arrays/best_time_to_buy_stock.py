@@ -21,3 +21,24 @@ Explanation: In this case, no transactions are done and the max profit = 0.
 
 Constraints:
 """
+
+def best_time(nums):
+    i = 0
+    j = 1
+    max_profit = 0
+
+    while j < len(nums):
+        if nums[i] < nums[j]:
+            profit = nums[j] - nums[i]
+            max_profit = max(max_profit, profit)
+        else:
+            #found something smaller, so shift to i to j
+            i = j
+        j += 1
+
+    return max_profit
+
+
+if __name__ == "__main__":
+    nums = [7,1,5,3,6,4]
+    print(best_time(nums))

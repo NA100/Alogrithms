@@ -86,6 +86,6 @@ def top_k_bucket_sort(nums, k):
 
 
 if __name__ == "__main__":
-    nums = [1,1,1,2,2,2, 3,3,3,3,3,3]
+    nums = [1,1,1,2,2,2,3,3,3,3,3,3]
     k = 2
     print(top_k_with_heap(nums, k))
