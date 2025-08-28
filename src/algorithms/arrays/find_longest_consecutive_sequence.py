@@ -24,7 +24,6 @@ def longest_sequence(nums):
     num_set = set(nums)
     best = 0
 
-
     for s in num_set: #iterate thru all elements in set
         if s-1 not in num_set:  # only start counting at beginning of sequence
             y = s

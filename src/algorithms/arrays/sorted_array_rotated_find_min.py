@@ -20,15 +20,19 @@ def find_min(arr):
 
     while l <= h:
         m = (l + h) // 2
+        print(f"executing for : {arr[l]} {arr[m]} {arr[h]}")
         if arr[l] < arr[h]:
             m = l
+            print(f"match : {arr[l]} {arr[h]}")
             break
         if arr[l] > arr[m]:
-            h = m - 1
+            h = m
+            print(f"check left : {arr[l]} {arr[h]}")
         else:
             l = m + 1
+            print(f"check right : {arr[l]} {arr[h]}")
     return arr[m]
 
 if __name__ == "__main__":
-    arr = [11,1,2,3,4,5,6,7,8]
+    arr = [11,12,14, -1000, 0,1,2,3,4,5,6,7,8]
     print(find_min(arr))
