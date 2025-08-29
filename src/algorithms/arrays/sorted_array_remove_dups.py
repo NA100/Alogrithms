@@ -39,7 +39,20 @@ It does not matter what you leave beyond the returned k (hence they are undersco
 
 """
 
-ow
+def remove_duplicates(nums):
+    i = 0
+    j = 1
+    while j < len(nums):
+        if j < len(nums) and nums[i] == nums[j] :
+            while j < len(nums) and nums[i] == nums[j]:
+                j += 1
+            i += 1
+            if j < len(nums):
+                nums[i] = nums[j]
+        else:
+            j += 1
+            i += 1
+
     return i
 
 if __name__ == "__main__":
