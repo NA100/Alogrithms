@@ -17,7 +17,7 @@ Output: [0,0,9,0,0]
 
 TIP:  you actually don't need prefix array and suffix array
 You can do passes one from left to right and right to left
-In output array and update the value 
+In output array and update the value
 """
 
 def product_except_self(nums):
