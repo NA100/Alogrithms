@@ -37,5 +37,33 @@ All elements of nums are distinct.
 1 <= nums.length <= 20
 2 <= nums[i] <= 30
 2 <= target <= 30
-
 """
+
+def combinationSum(candidates, target):
+    res = []
+    candidates.sort()
+
+    def backtrack(chosen, index, chosen_sum):
+        if index == len(candidates):
+            return
+
+        if chosen_sum == target:
+            res.append(chosen[:])
+            return
+
+        if chosen_sum > target:
+            return
+
+        chosen.append(candidates[index])
+        backtrack(chosen, index, chosen_sum + candidates[index])
+
+        chosen.pop()
+        backtrack(chosen, index + 1, chosen_sum)
+
+    backtrack([], 0, 0)
+    return res
+
+if __name__ == "__main__":
+    nums = [2,3,6,7]
+    target = 7
+    print(combinationSum(nums, target))
