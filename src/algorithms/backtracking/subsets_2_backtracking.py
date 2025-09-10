@@ -18,11 +18,40 @@ Constraints:
 1 <= nums.length <= 11
 -20 <= nums[i] <= 20
 
+Backtracking is a problem-solving technique commonly used in LeetCode challenges,
+especially for problems involving combinations, permutations, and decision-making trees.
+It systematically explores all possible solutions to a problem by incrementally building
+candidates and abandoning a candidate ("backtracking")
+as soon as it determines that it cannot lead to a valid solution.
+
 """
 
 def subsets_2(nums):
     return nums
 
 if __name__ == "__main__":
-   res = []
-   print(res)
+    nums = [1,2,1]
+    res = []
+    nums.sort()
+
+    def backtrack(i, subset):
+        #i is the index we are considering
+        if i == len(nums):
+           res.append(subset[::])
+           return
+
+        #subset with nums[i]
+        subset.append(nums[i])
+        backtrack(i+1,subset)
+
+        #subset without nums[i]
+        subset.pop()
+
+        #skip next index if it is same as current index
+        while i + 1 < len(nums) and nums[i] == nums[i+1]:
+            i += 1
+        backtrack(i+1, subset)
+        return res
+
+    print(backtrack(0, []))
+
